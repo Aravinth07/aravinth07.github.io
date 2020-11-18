@@ -315,7 +315,8 @@ $(document).ready(function() {
 
                 $("#page_title").text("Aravinth");
                 $('.light0').css('display', 'block');
-
+                $('#pause_svg').css('display', 'none');
+                $('#play_svg').css('display', 'block');
                 break;
             case "OverviewBtn":
                 player.stop();
@@ -416,13 +417,20 @@ $(document).ready(function() {
             el: '.swiper-pagination',
             clickable: true,
         },
-        autoplay: {
-            delay: 1000,
-            disableOnInteraction: true,
-        },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
     });
+});
+
+$(document).ready(function() {
+    $('#pause_svg').css('display', 'none');
+    $('#play_svg').css('display', 'block');
+
+    $('#mute_svg').css('display', 'none');
+    $('#replay_ro_svg').css('display', 'none');
+    $('#sound_svg').css('display', 'block');
+    $('#replay_svg').css('display', 'block');
+
 });

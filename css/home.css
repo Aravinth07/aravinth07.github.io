@@ -36,7 +36,8 @@ body {
 }
 
 #small-width-overview,
-#small-width-lottie {
+#small-width-lottie,
+#player-controls {
     display: none;
 }
 
@@ -46,8 +47,15 @@ body {
 }
 
 @media (max-width: 768px) {
+    #mute_svg,
+    #play_svg,
+    #sound_svg,
+    #pause_svg {
+        display: none;
+    }
     #small-width-overview,
-    #small-width-lottie {
+    #small-width-lottie,
+    #player-controls {
         display: block;
     }
     #full-width-overview,

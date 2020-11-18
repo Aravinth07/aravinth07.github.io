@@ -180,12 +180,10 @@
     }
 }
 
-@media (max-width: 500px) {
-    .controls {
-        position: relative;
-        margin-top: -160px;
-        /* negative value of footer height */
-        height: 150px;
-        clear: both;
-    }
+.controls {
+    position: relative;
+    margin-top: -160px;
+    /* negative value of footer height */
+    height: 150px;
+    clear: both;
 }
