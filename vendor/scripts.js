@@ -222,11 +222,15 @@ jQuery(document).ready(function($) {
     $('#vedhase-toggle').on('click', function() {
         if ($(this).attr('data-click-state') == 1) {
             $(this).attr('data-click-state', 0);
+            $('#play_svg').css('display', 'none');
+            $('#pause_svg').css('display', 'block');
             const player = document.querySelector("lottie-player");
             player.play();
             bgm.play();
         } else {
             $(this).attr('data-click-state', 1);
+            $('#play_svg').css('display', 'block');
+            $('#pause_svg').css('display', 'none');
             const player = document.querySelector("lottie-player");
             player.pause();
             bgm.pause();
