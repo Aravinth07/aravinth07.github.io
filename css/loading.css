@@ -158,6 +158,14 @@
     }
 }
 
+.controls {
+    position: relative;
+    margin-top: -160px;
+    /* negative value of footer height */
+    height: 150px;
+    clear: both;
+}
+
 @media (max-width: 700px) {
     #vedhase-text {
         position: absolute;
@@ -180,10 +188,12 @@
     }
 }
 
-.controls {
-    position: relative;
-    margin-top: -160px;
-    /* negative value of footer height */
-    height: 150px;
-    clear: both;
+@media (max-width: 414px) {
+    .controls {
+        position: relative;
+        margin-top: -190px;
+        /* negative value of footer height */
+        height: 150px;
+        clear: both;
+    }
 }
