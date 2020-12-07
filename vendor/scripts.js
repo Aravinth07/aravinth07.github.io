@@ -297,11 +297,13 @@ function sound() {
 }
 
 //controls..........................ends........................
-setTimeout(function() {
-    $("#loader").css('display', 'none');
-}, 5000);
 
 
+$(window).on("load", function() {
+    $.ready.then(function() {
+        $("#loader").css('display', 'none');
+    });
+});
 
 
 //nav tab
