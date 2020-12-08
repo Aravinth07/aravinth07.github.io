@@ -385,7 +385,6 @@ $(window).on("load", function() {
 
 //nav tab
 $(document).ready(function() {
-    $("#loader").css('display', 'none');
 
     $('.list-group a').on('shown.bs.tab', function(event) {
         var x = $(event.target).attr("id"); // active tab
