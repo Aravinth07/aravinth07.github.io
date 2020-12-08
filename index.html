@@ -1,5 +1,3 @@
-<html>
-
 <head>
     <title>Aravinth</title>
     <meta charset="utf-8">
@@ -38,21 +36,29 @@
     <link rel="stylesheet" type="text/css" href="css/loading.css">
     <link rel="stylesheet" type="text/css" href="css/theme.css">
     <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="fluid\fluid.css">
     <link rel="stylesheet" type="text/css" href="css/scrollbar.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.4.4/webcomponents-loader.js"></script>
-
+    <script type="text/javascript" src="fluid/js/dat.gui.min.js"></script>
 </head>
 
 <body>
+
     <div id="loader" class="container-fluid loader-wrapper scroll-style">
+
         <div class="loadWheel img-fluid">
             <img src="svg/vedhase.svg" style="width: 100%; height: 100%;" alt="loading">
             <div id="loading-text">
                 &lt;&lt;&lt; LOADING &gt;&gt;&gt;
             </div>
+
         </div>
+
     </div>
+
+
+
     <nav class="navbar navbar-expand-sm bg-custom navbar-dark fixed-top text-center">
         <div class="navbar-nav mr-auto">
             <div id="sign">
@@ -409,16 +415,25 @@
 
     </div>
     <div class="tab-content ">
-        <div id="vedhase_page" class="tab-pane  active vedhase container-fluid ">
+        <div id="vedhase_page" class="tab-pane  active vedhase ">
+
+
+
             <audio id="bgm" loop>
                     <source src="lips.mp3" type="audio/mpeg">
                   </audio>
+
             <div id="vedhase-text">Aravinth</div>
             <div class="Wheel img-fluid">
+
                 <img src="svg/tamil-loading.svg" style="width: 100%;height: 100%;" alt="tamil">
+
             </div>
-            <lottie-player id="vedhase-toggle" src="json/Head.json" mode="normal" style="width: 100%; height: 100%;" loop>
+
+            <lottie-player id="vedhase-toggle" src="json/Head.json" mode="normal" style="width: 100%; height: 100%; position: absolute;  pointer-events: none;" background="transparent" loop>
             </lottie-player>
+            <canvas>
+            </canvas>
 
             <div style="margin-bottom: 50px;" class="fixed-bottom row justify-content-center">
 
@@ -540,7 +555,6 @@
 
 
             </div>
-
 
         </div>
         <div id="overview_page" class="tab-pane ">
