@@ -12,17 +12,11 @@ $(document).ready(function() {
     trans();
     var flag = localStorage.getItem("flag-state") || "true";
     if (flag === "true") {
-        a = 20;
-        b = 20;
-        c = 20;
-        declare();
+
         $('#dark-theme-btn').css('display', 'block');
         $('#light-theme-btn').css('display', 'none');
     } else {
-        a = 255;
-        b = 255;
-        c = 255;
-        declare();
+
         $('#light-theme-btn').css('display', 'block');
         $('#dark-theme-btn').css('display', 'none');
     }
