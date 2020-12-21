@@ -1,8 +1,8 @@
-let a = 0;
-let b = 0;
-let c = 0;
-
-
+let a;
+let b;
+let c;
+var OverviewBtnFlag = false;
+var LottieBtnFlag = false;
 $(document).ready(function() {
 
     var Theme = localStorage.getItem("theme-color") || "dark";
@@ -399,6 +399,8 @@ $(document).ready(function() {
                 bgm.currentTime = 0;
                 $("#page_title").text("Overview");
                 $('.light1').css('display', 'block');
+                OverviewBtnFlag = true;
+                LottieBtnFlag = false;
                 break;
             case "LottieFilesBtn":
                 player.stop();
@@ -406,6 +408,8 @@ $(document).ready(function() {
                 bgm.currentTime = 0;
                 $("#page_title").text("LottieFiles");
                 $('.light2').css('display', 'block');
+                OverviewBtnFlag = false;
+                LottieBtnFlag = true;
                 break;
             case "_3dBtn":
                 player.stop();
@@ -498,6 +502,62 @@ $(document).ready(function() {
         },
     });
 });
+document.addEventListener("keydown", function(e, callback) {
+    var mySwiper1 = document.querySelector('#full-width-overview').swiper;
+    var mySwiper2 = document.querySelector('#full-width-lottie').swiper;
+
+
+    if (e.key !== undefined) {
+        if (e.keyCode == 37) {
+            if (OverviewBtnFlag)
+                mySwiper1.slidePrev();
+            if (LottieBtnFlag)
+                mySwiper2.slidePrev();
+            //Left arrow pressed
+        }
+        if (e.keyCode == 39) {
+            if (OverviewBtnFlag)
+                mySwiper1.slideNext();
+            if (LottieBtnFlag)
+                mySwiper2.slideNext();
+            //Right arrow pressed
+        }
+    } else if (e.keyIdentifier !== undefined) {
+        if (e.keyCode == 37) {
+            if (OverviewBtnFlag)
+                mySwiper1.slidePrev();
+            if (LottieBtnFlag)
+                mySwiper2.slidePrev();
+            //Left arrow pressed
+        }
+        if (e.keyCode == 39) {
+            if (OverviewBtnFlag)
+                mySwiper1.slideNext();
+            if (LottieBtnFlag)
+                mySwiper2.slideNext();
+            //Right arrow pressed
+        }
+    } else if (e.keyCode !== undefined) {
+        if (e.keyCode == 37) {
+            if (OverviewBtnFlag)
+                mySwiper1.slidePrev();
+            if (LottieBtnFlag)
+                mySwiper2.slidePrev();
+            //Left arrow pressed
+        }
+        if (e.keyCode == 39) {
+            if (OverviewBtnFlag)
+                mySwiper1.slideNext();
+            if (LottieBtnFlag)
+                mySwiper2.slideNext();
+            //Right arrow pressed
+        }
+    }
+
+    callback(mySwiper1);
+    callback(mySwiper2);
+});
+
 
 $(document).ready(function() {
     $('#pause_svg').css('display', 'none');
