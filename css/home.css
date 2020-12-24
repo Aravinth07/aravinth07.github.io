@@ -4,6 +4,11 @@ body {
     height: 100%;
 }
 
+#vedhase-prev,
+#vedhase-next {
+    color: var(--white);
+}
+
 body {
     overflow: hidden;
     background-color: var(--color5);
