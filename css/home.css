@@ -7,6 +7,7 @@ body {
 #vedhase-prev,
 #vedhase-next {
     color: var(--white);
+    display: block;
 }
 
 body {
@@ -271,6 +272,10 @@ a:hover {
         display: none;
     }
     #bottom-nav {
+        display: none;
+    }
+    #vedhase-prev,
+    #vedhase-next {
         display: none;
     }
 }
