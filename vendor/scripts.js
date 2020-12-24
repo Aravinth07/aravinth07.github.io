@@ -1,6 +1,7 @@
 let a;
 let b;
 let c;
+var VedhaseBtnFlag = true;
 var OverviewBtnFlag = false;
 var LottieBtnFlag = false;
 $(document).ready(function() {
@@ -284,7 +285,9 @@ var bgm = document.getElementById("bgm");
 // $(document).ready(function() {
 //     setTimeout(function() {
 //         bgm.play();
-//         const player = document.querySelector("lottie-player");
+//        const player1 = document.querySelector("#vedhase-toggle1");
+// const player2 = document.querySelector("#vedhase-toggle2");
+// const player3 = document.querySelector("#vedhase-toggle3");
 //         player.play();
 
 //     }, 1000);
@@ -295,15 +298,23 @@ jQuery(document).ready(function($) {
             $(this).attr('data-click-state', 0);
             $('#play_svg').css('display', 'none');
             $('#pause_svg').css('display', 'block');
-            const player = document.querySelector("lottie-player");
-            player.play();
+            const player1 = document.querySelector("#vedhase-toggle1");
+            const player2 = document.querySelector("#vedhase-toggle2");
+            const player3 = document.querySelector("#vedhase-toggle3");
+            player1.play();
+            player2.play();
+            player3.play();
             bgm.play();
         } else {
             $(this).attr('data-click-state', 1);
             $('#play_svg').css('display', 'block');
             $('#pause_svg').css('display', 'none');
-            const player = document.querySelector("lottie-player");
-            player.pause();
+            const player1 = document.querySelector("#vedhase-toggle1");
+            const player2 = document.querySelector("#vedhase-toggle2");
+            const player3 = document.querySelector("#vedhase-toggle3");
+            player1.pause();
+            player2.pause();
+            player3.pause();
             bgm.pause();
 
         }
@@ -313,8 +324,12 @@ jQuery(document).ready(function($) {
 function play() {
     $('#play_svg').css('display', 'none');
     $('#pause_svg').css('display', 'block');
-    const player = document.querySelector("lottie-player");
-    player.play();
+    const player1 = document.querySelector("#vedhase-toggle1");
+    const player2 = document.querySelector("#vedhase-toggle2");
+    const player3 = document.querySelector("#vedhase-toggle3");
+    player1.play();
+    player2.play();
+    player3.play();
     bgm.play();
 
 }
@@ -322,16 +337,27 @@ function play() {
 function pause() {
     $('#play_svg').css('display', 'block');
     $('#pause_svg').css('display', 'none');
-    const player = document.querySelector("lottie-player");
-    player.pause();
+    const player1 = document.querySelector("#vedhase-toggle1");
+    const player2 = document.querySelector("#vedhase-toggle2");
+    const player3 = document.querySelector("#vedhase-toggle3");
+    player1.pause();
+    player2.pause();
+    player3.pause();
     bgm.pause();
 
 }
 
 function replay() {
-    const player = document.querySelector("lottie-player");
-    player.stop();
-    player.play();
+    const player1 = document.querySelector("#vedhase-toggle1");
+    const player2 = document.querySelector("#vedhase-toggle2");
+    const player3 = document.querySelector("#vedhase-toggle3");
+
+    player1.stop();
+    player2.stop();
+    player3.stop();
+    player1.play();
+    player2.play();
+    player3.play();
     bgm.pause();
     bgm.currentTime = 0;
     bgm.play();
@@ -343,9 +369,15 @@ function replay() {
 }
 
 function replay_ro() {
-    const player = document.querySelector("lottie-player");
-    player.stop();
-    player.play();
+    const player1 = document.querySelector("#vedhase-toggle1");
+    const player2 = document.querySelector("#vedhase-toggle2");
+    const player3 = document.querySelector("#vedhase-toggle3");
+    player1.stop();
+    player2.stop();
+    player3.stop();
+    player1.play();
+    player2.play();
+    player3.play();
     bgm.pause();
     bgm.currentTime = 0;
     bgm.play();
@@ -384,7 +416,9 @@ $(document).ready(function() {
         var x = $(event.target).attr("id"); // active tab
         var y = $(event.relatedTarget).attr("id"); // previous tab
 
-        const player = document.querySelector("lottie-player");
+        const player1 = document.querySelector("#vedhase-toggle1");
+        const player2 = document.querySelector("#vedhase-toggle2");
+        const player3 = document.querySelector("#vedhase-toggle3");
         switch (x) {
             case "iamBtn":
 
@@ -392,41 +426,57 @@ $(document).ready(function() {
                 $('.light0').css('display', 'block');
                 $('#pause_svg').css('display', 'none');
                 $('#play_svg').css('display', 'block');
+                VedhaseBtnFlag = true;
+                OverviewBtnFlag = false;
+                LottieBtnFlag = false;
                 break;
             case "OverviewBtn":
-                player.stop();
+                player1.stop();
+                player2.stop();
+                player3.stop();
+
                 bgm.pause();
                 bgm.currentTime = 0;
                 $("#page_title").text("Overview");
                 $('.light1').css('display', 'block');
+                VedhaseBtnFlag = false;
                 OverviewBtnFlag = true;
                 LottieBtnFlag = false;
                 break;
             case "LottieFilesBtn":
-                player.stop();
+                player1.stop();
+                player2.stop();
+                player3.stop();
                 bgm.pause();
                 bgm.currentTime = 0;
                 $("#page_title").text("LottieFiles");
                 $('.light2').css('display', 'block');
+                VedhaseBtnFlag = false;
                 OverviewBtnFlag = false;
                 LottieBtnFlag = true;
                 break;
             case "_3dBtn":
-                player.stop();
+                player1.stop();
+                player2.stop();
+                player3.stop();
                 bgm.pause();
                 bgm.currentTime = 0;
                 $("#page_title").text("3d Model");
                 $('.light3').css('display', 'block');
                 break;
             case "FindBtn":
-                player.stop();
+                player1.stop();
+                player2.stop();
+                player3.stop();
                 bgm.pause();
                 bgm.currentTime = 0;
                 $("#page_title").text("Find me");
                 $('.light4').css('display', 'block');
                 break;
             case "SettingsBtn":
-                player.stop();
+                player1.stop();
+                player2.stop();
+                player3.stop();
                 bgm.pause();
                 bgm.currentTime = 0;
                 $("#page_title").text("Settings");
@@ -476,8 +526,43 @@ $(document).ready(function() {
 $(document).ready(function() {
     $("#page_title").text("Aravinth");
     $('.light0').css('display', 'block');
-
-    var swiper = new Swiper('.swiper-container', {
+    var vedhasePage = new Swiper('.vedhasePage', {
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 1,
+        mousewheel: true,
+        observer: true,
+        observeParents: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    var lottieSwiper = new Swiper('.lottie_page', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        mousewheel: true,
+        observer: true,
+        observeParents: true,
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    var OverviewSwiper = new Swiper('.overview_page', {
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
@@ -505,7 +590,7 @@ $(document).ready(function() {
 document.addEventListener("keydown", function(e, callback) {
     var mySwiper1 = document.querySelector('#full-width-overview').swiper;
     var mySwiper2 = document.querySelector('#full-width-lottie').swiper;
-
+    var mySwiper3 = document.querySelector('#vedhaseMove').swiper;
 
     if (e.key !== undefined) {
         if (e.keyCode == 37) {
@@ -513,6 +598,8 @@ document.addEventListener("keydown", function(e, callback) {
                 mySwiper1.slidePrev();
             if (LottieBtnFlag)
                 mySwiper2.slidePrev();
+            if (VedhaseBtnFlag)
+                mySwiper3.slidePrev();
             //Left arrow pressed
         }
         if (e.keyCode == 39) {
@@ -520,14 +607,74 @@ document.addEventListener("keydown", function(e, callback) {
                 mySwiper1.slideNext();
             if (LottieBtnFlag)
                 mySwiper2.slideNext();
+            if (VedhaseBtnFlag)
+                mySwiper3.slideNext();
             //Right arrow pressed
         }
+        if (e.keyCode == 32) {
+
+            if ($(this).attr('data-click-state') == 1) {
+                $(this).attr('data-click-state', 0);
+                $('#play_svg').css('display', 'none');
+                $('#pause_svg').css('display', 'block');
+                const player1 = document.querySelector("#vedhase-toggle1");
+                const player2 = document.querySelector("#vedhase-toggle2");
+                const player3 = document.querySelector("#vedhase-toggle3");
+                player1.play();
+                player2.play();
+                player3.play();
+                bgm.play();
+            } else {
+                $(this).attr('data-click-state', 1);
+                $('#play_svg').css('display', 'block');
+                $('#pause_svg').css('display', 'none');
+                const player1 = document.querySelector("#vedhase-toggle1");
+                const player2 = document.querySelector("#vedhase-toggle2");
+                const player3 = document.querySelector("#vedhase-toggle3");
+                player1.pause();
+                player2.pause();
+                player3.pause();
+                bgm.pause();
+
+            }
+
+        }
     } else if (e.keyIdentifier !== undefined) {
+        if (e.keyCode == 32) {
+
+            if ($(this).attr('data-click-state') == 1) {
+                $(this).attr('data-click-state', 0);
+                $('#play_svg').css('display', 'none');
+                $('#pause_svg').css('display', 'block');
+                const player1 = document.querySelector("#vedhase-toggle1");
+                const player2 = document.querySelector("#vedhase-toggle2");
+                const player3 = document.querySelector("#vedhase-toggle3");
+                player1.play();
+                player2.play();
+                player3.play();
+                bgm.play();
+            } else {
+                $(this).attr('data-click-state', 1);
+                $('#play_svg').css('display', 'block');
+                $('#pause_svg').css('display', 'none');
+                const player1 = document.querySelector("#vedhase-toggle1");
+                const player2 = document.querySelector("#vedhase-toggle2");
+                const player3 = document.querySelector("#vedhase-toggle3");
+                player1.pause();
+                player2.pause();
+                player3.pause();
+                bgm.pause();
+
+            }
+
+        }
         if (e.keyCode == 37) {
             if (OverviewBtnFlag)
                 mySwiper1.slidePrev();
             if (LottieBtnFlag)
                 mySwiper2.slidePrev();
+            if (VedhaseBtnFlag)
+                mySwiper3.slidePrev();
             //Left arrow pressed
         }
         if (e.keyCode == 39) {
@@ -535,14 +682,46 @@ document.addEventListener("keydown", function(e, callback) {
                 mySwiper1.slideNext();
             if (LottieBtnFlag)
                 mySwiper2.slideNext();
+            if (VedhaseBtnFlag)
+                mySwiper3.slideNext();
             //Right arrow pressed
         }
     } else if (e.keyCode !== undefined) {
+        if (e.keyCode == 32) {
+
+            if ($(this).attr('data-click-state') == 1) {
+                $(this).attr('data-click-state', 0);
+                $('#play_svg').css('display', 'none');
+                $('#pause_svg').css('display', 'block');
+                const player1 = document.querySelector("#vedhase-toggle1");
+                const player2 = document.querySelector("#vedhase-toggle2");
+                const player3 = document.querySelector("#vedhase-toggle3");
+                player1.play();
+                player2.play();
+                player3.play();
+                bgm.play();
+            } else {
+                $(this).attr('data-click-state', 1);
+                $('#play_svg').css('display', 'block');
+                $('#pause_svg').css('display', 'none');
+                const player1 = document.querySelector("#vedhase-toggle1");
+                const player2 = document.querySelector("#vedhase-toggle2");
+                const player3 = document.querySelector("#vedhase-toggle3");
+                player1.pause();
+                player2.pause();
+                player3.pause();
+                bgm.pause();
+
+            }
+
+        }
         if (e.keyCode == 37) {
             if (OverviewBtnFlag)
                 mySwiper1.slidePrev();
             if (LottieBtnFlag)
                 mySwiper2.slidePrev();
+            if (VedhaseBtnFlag)
+                mySwiper3.slidePrev();
             //Left arrow pressed
         }
         if (e.keyCode == 39) {
@@ -550,12 +729,15 @@ document.addEventListener("keydown", function(e, callback) {
                 mySwiper1.slideNext();
             if (LottieBtnFlag)
                 mySwiper2.slideNext();
+            if (VedhaseBtnFlag)
+                mySwiper3.slideNext();
             //Right arrow pressed
         }
     }
 
     callback(mySwiper1);
     callback(mySwiper2);
+    callback(mySwiper3);
 });
 
 
