@@ -6,9 +6,7 @@ var OverviewBtnFlag = false;
 var LottieBtnFlag = false;
 $(document).ready(function() {
 
-    var Theme = localStorage.getItem("theme-color") || "light";
-
-
+    var Theme = localStorage.getItem("theme-color") || "dark";
     document.documentElement.setAttribute('storedTheme', Theme);
     trans();
     var flag = localStorage.getItem("flag-state") || "true";
