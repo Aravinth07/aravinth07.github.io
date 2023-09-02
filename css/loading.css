@@ -2,7 +2,7 @@
     position: relative;
     height: 100%;
     z-index: 3000;
-    background: var(--color5);
+    background: var(--color1);
     overflow: auto;
     text-align: center;
     scrollbar-color: var(--color3) var(--color1);
